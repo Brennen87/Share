@@ -1,0 +1,71 @@
+.delivery_card {
+  position: relative;
+  padding-top: 20px;
+  &:not(&:last-child) {
+    padding-bottom: 20px;
+  }
+  &__inner {
+    display: flex;
+  }
+
+  &__right {
+    flex-grow: 1;
+  }
+
+  &__fullname {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+
+    & span {
+      margin-left: 30px;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 11px;
+      color: #a1a1a1;
+    }
+
+    @media (max-width: 425px) {
+      flex-flow: column nowrap;
+      & span {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 130%;
+    margin-bottom: 10px;
+  }
+
+  &__attachments {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .attachment:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    margin-right: 20px;
+    margin-left: 6px;
+
+    &__status::after {
+      right: 0;
+    }
+  }
+}

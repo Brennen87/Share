@@ -1,0 +1,138 @@
+.top_vendors_carousel {
+  &__slide { padding: 2px;}
+  &__cards {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    @media (max-width: 1250px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 700px) {
+      & .fixed_vendor_card__wrap {
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    & .avatar {
+      min-width: 80px;
+      min-height: 80px;
+      max-width: 80px;
+      max-height: 80px;
+      width: 80px;
+      height: 80px;
+      .avatar_image {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      }
+      &::after {
+        box-sizing: border-box;
+        bottom: 3px;
+        right: 3px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    & .fixed_vendor_card {
+      &__wrap {
+        max-height: 264px;
+        //min-height: 264px;
+      }
+
+      &__mobile {
+        margin-top: 20px;
+
+        .fixed_vendor_card__expertises {
+          margin-top: 10px;
+        }
+      }
+
+      &__genres {
+        &_list {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    @media (max-width: 700px) {
+      top: unset;
+      transform: unset;
+      bottom: -40px;
+    }
+    &:hover path {
+       stroke: #ff8c00;
+    }
+  }
+
+  &__prevButton {
+    left: -30px;
+    @media (max-width: 700px) {
+      display: none;
+      left: 50%;
+      transform: translate(-20px, 0);
+    }
+  }
+
+  &__nextButton {
+    right: -30px;
+    @media (max-width: 700px) {
+      display: none;
+      right: 50%;
+      transform: translate(20px, 0);
+    }
+  }
+}
+
+.centered {
+  @media (max-width: 700px) {
+    padding-bottom: 30px;
+  }
+}
+
+.carousel-root {
+  @media (max-width: 1250px) {
+    width: 560px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+    margin: 0 auto!important;
+  }
+}
+
+.carousel .slide {
+  background: unset;
+  text-align: unset;
+}
+
+.carousel.carousel-slider {
+  overflow: unset;
+}
+
+.carousel .control-dots {
+  display: none;
+  & .dot {
+    background: #324A5E;
+    box-shadow: unset;
+    opacity: unset;
+  }
+  @media (max-width: 700px) {
+    display: block;
+    bottom: -40px;
+    left: 56%;
+    transform: translateX(-56%);
+  }
+
+  & .dot.selected {
+    background: #FF8C00!important;
+  }
+}

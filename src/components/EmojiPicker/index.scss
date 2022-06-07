@@ -1,0 +1,37 @@
+.emoji_picker {
+  &__wrapper {
+    position: relative;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background: url('../../assets/icons/icon_smile.svg') no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    &:hover {
+      max-width: 20px;
+      max-height: 20px;
+      background: url('../../assets/icons/icon_smile_yellow.svg') no-repeat;
+      background-size: cover;
+      cursor: pointer;
+    }
+
+    &_disabled {
+      background: url('../../assets/icons/icon_smile_grey.svg') no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    bottom: 100%;
+    &_hidden {
+      display: none;
+    }
+  }
+
+  .emoji-mart-scroll {
+    border-bottom: 0;
+    margin-bottom: 6px;
+  }
+}

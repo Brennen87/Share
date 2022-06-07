@@ -1,0 +1,123 @@
+.inbox_projects {
+  grid-area: projects;
+  box-sizing: border-box;
+  padding-left: 7px;
+
+  &__top {
+    padding-left: 13px;
+  }
+
+  &__project {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: #e3e3e3;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    &_title {
+      flex-grow: 1;
+      padding-left: 25px;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      color: #000000;
+      background-image: url('../../../assets/icons/icon_tabs.svg');
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+    }
+
+    & svg {
+      display: none;
+      cursor: pointer;
+      @media only screen and (max-width: 970px) {
+        display: block;
+      }
+    }
+
+    @media only screen and (max-width: 540px) {
+      padding: 8px 10px;
+      &_title {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  &__desktop_list {
+    padding-left: 7px;
+    .inbox_project_card {
+      max-width: 230px;
+      direction: ltr;
+    }
+  }
+
+  &__button {
+    background: #044c5a;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 25px;
+    display: block;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    &:hover {
+      cursor: pointer;
+      color: #ff8c00;
+    }
+    @media only screen and (max-width: 970px) {
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width: 540px) {
+      font-size: 13px;
+      line-height: 15px;
+      padding: 7px;
+      height: 30px;
+    }
+  }
+
+  &__desktop_list,
+  &__mobile_list {
+    width: 100%;
+    overflow: auto;
+    max-height: 560px;
+    direction: rtl;
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #e7e7e7;
+      border-radius: 10px;
+    }
+  }
+
+  &__mobile_list {
+    background: #fff;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 2;
+    display: none;
+    &__active {
+      display: block;
+    }
+    @media (max-width: 375px) {
+      top: 35px;
+      padding: 5px;
+    }
+  }
+}

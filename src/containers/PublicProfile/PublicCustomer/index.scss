@@ -1,0 +1,144 @@
+.public_customer {
+  &__wrap {
+    background: #ffffff;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 40px;
+    @media (max-width: 525px) {
+      padding: 20px;
+    }
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  &__avatar {
+    margin-right: 20px;
+    @media (max-width: 525px) {
+      margin-right: 10px;
+      width: 50px;
+      height: 50px;
+      max-width: 50px;
+      max-height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+    }
+  }
+
+  &__info,
+  &__rate,
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__left {
+    flex-grow: 1;
+    margin-right: 10px;
+    align-items: flex-start;
+  }
+
+  &__right {
+    align-self: stretch;
+    align-items: unset;
+  }
+
+  &__rate {
+    margin-right: 20px;
+    @media (max-width: 525px) {
+      margin-right: 10px;
+    }
+    & div {
+      display: flex;
+      align-items: center;
+    }
+    &_number {
+      font-size: 14px;
+      line-height: 16px;
+      color: #044c5a;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    @media (max-width: 525px) {
+      display: flex;
+      align-items: stretch;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__fullname {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    @media (max-width: 525px) {
+      font-size: 14px;
+    }
+  }
+
+  &__location {
+    position: relative;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    padding-left: 17px;
+    @media (max-width: 525px) {
+      margin-top: 10px;
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      content: '';
+      width: 15px;
+      height: 20px;
+      padding-left: 25px;
+      background: url('../../../assets/icons/icon_location.svg') no-repeat;
+    }
+  }
+
+  &__contact_btn {
+    width: 140px;
+    height: 36px;
+    .small_button__label {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @media (max-width: 740px) {
+      width: 100px;
+      height: 25px;
+      .small_button__label {
+        font-size: 14px;
+        line-height: 16px;
+        padding: 0;
+      }
+    }
+    @media (max-width: 525px) {
+      width: 80px;
+    }
+  }
+
+  &__remove_btn {
+    padding-left: 20px;
+    border-left: 1px solid #c4c4c4;
+    margin-left: 20px;
+    display: flex;
+    & svg {
+      margin: auto;
+      cursor: pointer;
+      &:hover path {
+        fill: #ff8c00;
+      }
+    }
+  }
+}

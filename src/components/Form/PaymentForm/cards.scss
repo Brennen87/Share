@@ -1,0 +1,97 @@
+.saved_card {
+  &__preloader {
+    height: 60px;
+    padding-bottom: 20px;
+    & svg {
+      width: 80px;
+    }
+  }
+  &__item {
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: space-between;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  &__saved {
+    display: inline-block;
+    [type='radio']:checked,
+    [type='radio']:not(:checked) {
+      position: absolute;
+      left: -9999px;
+    }
+    [type='radio']:checked + label,
+    [type='radio']:not(:checked) + label {
+      text-transform: capitalize;
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 16px;
+      display: inline-block;
+      color: #000;
+
+      @media (min-width: 436px) {
+        font-size: 14px;
+      }
+    }
+    [type='radio']:not(:checked) + label {
+      color: #a1a1a1;
+    }
+    [type='radio']:checked + label:before,
+    [type='radio']:not(:checked) + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #ff8c00;
+      border-radius: 100%;
+      background: #fff;
+    }
+    [type='radio']:checked + label:after,
+    [type='radio']:not(:checked) + label:after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: #ff8c00;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    [type='radio']:not(:checked) + label:after {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    [type='radio']:checked + label:after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+
+.remove_card {
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 0.9em;
+  margin-left: 0.7em;
+
+  span {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 16px;
+    color: #044c5a;
+
+    &:hover {
+      color: #ff8c00;
+    }
+  }
+}

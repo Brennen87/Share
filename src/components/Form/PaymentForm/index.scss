@@ -1,0 +1,448 @@
+$leftWidth: 180px;
+$rightWidth: 80px;
+
+.payment_form__wrapper {
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #ededed;
+}
+
+.payment_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr !important;
+  }
+  @media (max-width: 576px) {
+    grid-column-gap: 0;
+    padding: 0;
+  }
+
+  &__cards {
+    &_saved {
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    padding-right: 40px;
+    border-right: 1px solid #ededed;
+    @media (max-width: 992px) {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 800px) {
+      border: none;
+      padding-right: 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
+  &__billing,
+  &__new_card {
+    flex-basis: 50%;
+
+    @media (max-width: 1080px) {
+      &__left,
+      &__right {
+        .input_text_field_small,
+        .payment_form__new_card__number {
+          display: flex;
+          flex-flow: column;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  &__address {
+    max-width: 300px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+
+    p {
+      margin: 0 0 7px;
+    }
+  }
+
+  &__billing_full {
+    display: flex;
+
+    &__left,
+    &__right {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &__row {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__col1 {
+      color: #c4c4c4;
+    }
+
+    &__col2 {
+      color: #333;
+    }
+
+    &__left {
+      margin-right: 70px;
+      margin-bottom: 10px;
+
+      & .payment_form__billing_full__col1 {
+        width: $leftWidth;
+        min-width: $leftWidth;
+      }
+    }
+
+    &__right {
+      & .payment_form__billing_full__col1 {
+        width: $rightWidth;
+        min-width: $rightWidth;
+      }
+    }
+  }
+
+  &__billing {
+    margin-left: 0;
+  }
+
+  &__billing_form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    @media (max-width: 990px) {
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+
+    & .input_text_field_small {
+      margin-bottom: 10px;
+      flex-wrap: nowrap;
+    }
+
+    @media (max-width: 1080px) {
+      &__left,
+      &__right {
+        .input_text_field_small,
+        .select_field {
+          display: flex;
+          flex-flow: column nowrap;
+        }
+      }
+    }
+
+    &__left {
+      & .input_text_field_small__label {
+        min-width: 110px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        color: #868686;
+      }
+
+      & .input_text_field_small__input {
+        max-width: 300px;
+        width: 100%;
+
+        @media (max-width: 1179px) {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &__right {
+      .select_field__input {
+        position: relative !important;
+      }
+
+      & .select__menu {
+        max-width: 300px;
+        position: absolute;
+        top: 40px;
+        left: 0;
+
+        & > * {
+          max-height: 220px;
+          @media (max-height: 900px) {
+            max-height: 140px;
+          }
+          @media (max-height: 840px) {
+            max-height: 100px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: transparent;
+          }
+
+          &::-webkit-scrollbar {
+            display: block !important;
+            width: 6px;
+            background-color: #f5f5f5;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: #979797;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      & .select_field {
+        flex-wrap: nowrap;
+        justify-content: unset;
+      }
+
+      & .input_text_field_small__label,
+      & .select_field__label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        color: #868686;
+
+        width: 110px;
+        min-width: 110px;
+      }
+
+      & .input_text_field_small__input,
+      & .select_field__input {
+        max-width: 300px;
+        width: 100%;
+        z-index: 999;
+
+        @media (max-width: 1179px) {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        @media (max-width: 640px) {
+          min-width: unset;
+        }
+      }
+    }
+  }
+
+  &__new_card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    @media (max-width: 970px) {
+      flex-direction: column;
+    }
+
+    &_hidden {
+      display: none;
+    }
+
+    & .input_text_field_small {
+      margin-bottom: 10px;
+      flex-wrap: nowrap;
+    }
+
+    &__row {
+      display: flex;
+    }
+
+    &__col1 {
+      font-size: 16px;
+      line-height: 18px;
+
+      &.cvc_title {
+        font-size: 12px !important;
+      }
+    }
+
+    &__left {
+      @media (max-width: 970px) {
+        margin-right: 0;
+      }
+
+      &.tt .input_text_field_small__label {
+        text-transform: inherit;
+      }
+
+      & .payment_form__new_card__col2 {
+        flex-grow: 1;
+        max-width: 300px;
+        @media (max-width: 1179px) {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+
+      & .payment_form__new_card__col1,
+      & .input_text_field_small__label {
+        min-width: 135px;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        text-transform: capitalize;
+        color: #868686;
+      }
+
+      & .input_text_field_small__input {
+        max-width: 300px;
+        width: 100%;
+        @media (max-width: 1179px) {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        @media (max-width: 640px) {
+          min-width: unset;
+        }
+      }
+    }
+
+    &__right {
+      display: grid;
+      grid-template-columns: minmax(0, 255px) minmax(0, 160px);
+      grid-column-gap: 10px;
+
+      @media (max-width: 1179px) {
+        grid-column-gap: 100px;
+      }
+
+      @media (max-width: 800px) {
+        grid-template-columns: repeat(2, minmax(0, 0.5fr));
+      }
+
+      @media (max-width: 576px) {
+        grid-column-gap: 25px;
+      }
+
+      @media (max-width: 375px) {
+        grid-column-gap: 5px !important;
+        grid-template-columns: repeat(2, minmax(0, 0.5fr));
+      }
+
+      & .payment_form__new_card__col1 {
+        min-width: 135px;
+        font-size: 14px;
+        line-height: 14px;
+        text-transform: capitalize;
+        color: #868686;
+
+        @media (max-width: 1080px) {
+          margin-bottom: 10px;
+        }
+        @media (max-width: 970px) {
+          width: $leftWidth;
+          min-width: $leftWidth;
+        }
+
+        @media (max-width: 375px) {
+          width: auto;
+          min-width: auto;
+        }
+      }
+
+      & .payment_form__new_card__col2 {
+        width: 100%;
+        min-width: 120px;
+      }
+
+      @media (max-width: 1080px) {
+        & .payment_form__new_card__cvc,
+        .payment_form__new_card__exp_date {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &__cvc {
+      & .payment_form__new_card__col1 {
+        min-width: 10px !important;
+        margin-right: 10px;
+      }
+    }
+
+    &__number_element,
+    &__exp_element,
+    &__cvc_element {
+      box-sizing: border-box;
+      border-radius: 5px;
+      background: #fbfbfb;
+
+      -webkit-appearance: none;
+      -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+
+      &.error {
+        border: 1px solid #ff0000;
+      }
+
+      input,
+      .StripeElement {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 16px;
+        color: #000000;
+        padding: 10px;
+        outline: none;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background: #fbfbfb;
+        max-height: 35px;
+        border: 1px solid transparent;
+
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+      }
+
+      input:focus,
+      .StripeElement--focus {
+        background: #ffffff;
+        border: 1px solid #c4c4c4;
+        box-sizing: border-box;
+        border-radius: 3px;
+
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &__new_card__number {
+    margin-bottom: 10px;
+    @media (max-width: 1080px) {
+      .payment_form__new_card__col1 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

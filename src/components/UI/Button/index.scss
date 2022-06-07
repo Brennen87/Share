@@ -1,0 +1,39 @@
+.button_main {
+  width: 220px;
+  min-height: 40px;
+  border-radius: 5px;
+  background: #044c5a;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  outline: none;
+  display: block;
+
+  &-disabled {
+    background: #c4c4c4;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    color: #fff;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &:hover:not(.button_main-disabled) span {
+    cursor: pointer;
+    transition: 0.5s;
+    color: #ff8c00;
+  }
+
+  &__label {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 7px 10px;
+    display: block;
+    text-align: center;
+    vertical-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}

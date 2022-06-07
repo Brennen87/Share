@@ -1,0 +1,91 @@
+.pep_summary_form {
+  label {
+    min-width: 170px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #333333;
+    margin-bottom: 18px;
+  }
+
+  &__rate {
+    margin-bottom: 10px;
+
+    .input_text_field_small__label {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #868686;
+      margin-bottom: 0;
+    }
+
+    .input_text_field_small__text {
+      padding-right: 25px;
+      padding-top: 5px;
+
+      @media (max-width: 576px) {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      margin-bottom: 20px;
+      flex-direction: column;
+      .input_text_field_small__top {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__categories,
+  &__expertises,
+  &__experiences,
+  &__resume {
+    margin-bottom: 20px;
+
+    .textarea_field__label {
+      padding: 0 15px 0 0;
+    }
+
+    .select__multi-value__label {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__resume {
+    .textarea_field {
+      flex-wrap: nowrap;
+      
+      @media (max-width: 500px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      &__label {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    & .small_button {
+      margin-left: 10px;
+      @media (max-width: 525px) {
+        width: 80px;
+      }
+    }
+  }
+
+  .select_field__input {
+    max-width: 600px;
+  }
+}

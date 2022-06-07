@@ -1,0 +1,27 @@
+[
+  {
+    "name": "fe",
+    "image": "${DOCKER_IMAGE}:${DOCKER_TAG}",
+    "hostname": "fe",
+    "cpu": 400,
+    "memoryReservation": 400,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 0,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "mountPoints": [],
+    "volumesFrom": [],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "prod-kuprik",
+        "awslogs-region": "us-west-1",
+        "awslogs-stream-prefix": "fe"
+      }
+    }
+  }
+]

@@ -1,0 +1,12 @@
+.typingIndicator {
+  display: flex;
+  font-size: 0.8em;
+  align-items: center;
+  color: darkslategrey;
+  opacity: 0.8;
+  font-weight: bold;
+  grid-column-gap: 5px;
+  column-gap: 5px;
+  position: absolute;
+  margin-top: -20px;
+}

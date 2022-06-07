@@ -1,0 +1,208 @@
+.pep_portfolio_form {
+  label {
+    width: 170px;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #333333;
+    margin-bottom: 18px;
+
+    span {
+      font-weight: normal;
+      color: #868686;
+      text-transform: initial;
+    }
+  }
+
+  &__portfolio_title,
+  &__description {
+    margin-bottom: 20px;
+    .textarea_field__label {
+      padding: 0 15px 0 0;
+    }
+    .input_text_field_small__label {
+      font-weight: normal;
+    }
+    @media (max-width: 500px) {
+      .textarea_field {
+        flex-direction: column;
+      }
+    }
+  }
+  &__portfolio_title {
+    label {
+      color: #868686;
+    }
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+    &_header {
+      width: 170px;
+      @media only screen and (max-width: 500px) {
+        margin-bottom: 10px;
+        width: auto;
+      }
+    }
+    &_content {
+      .pep_portfolio_form__image_label_upload {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        box-shadow: none;
+      }
+    }
+
+    &_title {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #868686;
+      &_tooltip {
+        padding-right: 25px;
+        padding-top: 5px;
+        font-size: 10px;
+        line-height: 11px;
+        color: #c4c4c4;
+
+        @media only screen and (max-width: 500px) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &_label {
+      max-width: 130px;
+      font-style: normal;
+      font-weight: normal;
+      padding: 6px 18px;
+      font-size: 14px;
+      line-height: 16px;
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      color: #044c5a;
+      border-radius: 5px;
+      background: #fbfbfb;
+
+      -webkit-appearance: none;
+      -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      &_upload {
+        border-radius: 3px;
+        padding: 5px;
+        color: #000000;
+        background: #ececec;
+      }
+      &:hover {
+        color: #ff8c00;
+      }
+    }
+    &_input {
+      bottom: 0;
+      position: absolute;
+      z-index: -10;
+      visibility: hidden;
+    }
+
+    &_preview {
+      width: 170px;
+      max-height: 300px;
+      margin-top: 10px;
+      object-fit: contain;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    & .small_button {
+      margin-left: 10px;
+      @media (max-width: 525px) {
+        width: 80px;
+      }
+    }
+  }
+
+  &__portfolios {
+    margin-left: 170px;
+    @media only screen and (max-width: 500px) {
+      margin: 0;
+    }
+    &_item {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      &_inner {
+        display: flex;
+        width: auto;
+        align-items: center;
+        border-radius: 3px;
+        background: #d2e5ed;
+        padding: 5px;
+      }
+      &_title {
+        display: inline-block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        max-width: 140px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      & div:not(:first-child) {
+        background-color: #c4c4c4;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        border-radius: 2px;
+        margin-left: 5px;
+        width: 16px;
+        height: 16px;
+        &:hover {
+          cursor: pointer;
+          background-color: #ff8c00;
+        }
+      }
+      &_remove {
+        background-image: url('../../../assets/icons/icon_delete_white.svg');
+        &:hover {
+          background-image: url('../../../assets/icons/icon_delete_white.svg');
+        }
+      }
+      &_edit {
+        background-image: url('../../../assets/icons/icon_edit_white.svg');
+        &:hover {
+          background-image: url('../../../assets/icons/icon_edit_white.svg');
+        }
+      }
+    }
+  }
+  .textarea_field__input {
+    max-width: 600px;
+  }
+}
+
+.pep_portfolio_modal_container_style {
+  align-items: center;
+}

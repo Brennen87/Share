@@ -1,0 +1,16 @@
+.social_bar {
+  display: flex;
+
+  &__link {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    &:hover path {
+      fill: #FF8C00;
+    }
+  }
+}

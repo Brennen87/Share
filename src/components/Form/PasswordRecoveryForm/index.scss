@@ -1,0 +1,52 @@
+.pswd_recovery_form {
+  margin-top: 30px;
+  @media (max-width: 576px) {
+    margin-top: 15px;
+  }
+  &__title {
+    font-size: 32px;
+    line-height: 37px;
+    text-align: center;
+    color: #000000;
+    margin: 0 0 30px;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  &__field {
+    margin-top: 20px;
+    @media (max-width: 576px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__description {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    @media (max-width: 576px) {
+      font-size: 10px;
+      line-height: 14px;
+      margin-top: 5px;
+    }
+  }
+
+  &__button {
+    margin: 20px auto 0;
+    @media (max-width: 576px) {
+      width: 150px;
+      min-height: 30px;
+      max-height: 30px;
+      & .button_main__label {
+        padding: unset;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  & .input_text_field__label {
+    text-transform: unset;
+  }
+}

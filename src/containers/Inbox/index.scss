@@ -1,0 +1,19 @@
+.inbox {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  grid-template-areas: 'conversations chat projects';
+  @media only screen and (max-width: 969px) {
+    grid-template-areas:
+      'conversations chat-search projects'
+      'chat chat chat';
+  }
+
+  @media only screen and (max-width: 770px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'conversations projects'
+      'chat-search ...'
+      'chat chat';
+  }
+}

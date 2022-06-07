@@ -1,0 +1,66 @@
+.payments {
+  &__table {
+    max-width: 945px;
+    width: 100%;
+    &_mob {
+      &_top {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        & h3 {
+          font-weight: 900;
+          font-size: 14px;
+          line-height: 20px;
+          color: #666666;
+          text-transform: uppercase;
+          margin: 0;
+          padding: 20px;
+          border-bottom: 2px solid rgba(159, 159, 159, 0.5);
+          cursor: pointer;
+        }
+        & .item_descr {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 14px;
+          color: #000000;
+        }
+        & .arrow {
+          position: absolute;
+          top: 20px;
+          right: 15px;
+          width: 15px;
+          height: 15px;
+          transform: rotate(-90deg);
+          transition: ease-in-out all 280ms;
+          background: url('../../../assets/icons/arrow-blue.svg') no-repeat;
+        }
+      }
+
+      &_bottom {
+        @extend .payments__table_mob_top;
+
+        .item_descr {
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 130%;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+.modal_payments {
+  width: 100%;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}

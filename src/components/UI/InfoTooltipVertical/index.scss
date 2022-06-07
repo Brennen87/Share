@@ -1,0 +1,53 @@
+.info_tooltip_vertical {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  display: inline-block;
+  &__active {
+    & .info_tooltip__text {
+      display: block;
+    }
+  }
+
+  &:hover &__text {
+    display: block;
+  }
+
+  &__icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: url('../../../assets/icons/icon_warning.svg') no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  &__text {
+    display: none;
+    position: absolute;
+    left: -8px;
+    top: -60px;
+    transform: translate(0, -50%);
+    min-width: 126px;
+    background: #074e5c;
+    border-radius: 3px;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+    padding: 15px;
+    z-index: 9999;
+    &::after {
+      content: '';
+      position: relative;
+      left: -57px;
+      bottom: -40px;
+      transform: translate(0, -50%);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid #074e5c;
+    }
+  }
+}

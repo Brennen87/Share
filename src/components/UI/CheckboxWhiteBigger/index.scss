@@ -1,0 +1,41 @@
+.checkbox_white_bigger {
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+
+    .checkbox_white_bigger__input:checked ~ .checkbox_white_bigger__checkmark {
+      background: url("../../../assets/icons/icon_black_checkmark.svg") no-repeat;
+      background-position: 50%;
+    }
+
+    .checkbox_white_bigger__input:disabled ~ .checkbox_white_bigger__checkmark {
+      opacity: .5;
+    }
+  }
+
+  &__checkmark {
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    border: 0.5px solid #C0C0C0;
+    background-color: #FFF;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}

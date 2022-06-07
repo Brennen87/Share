@@ -1,0 +1,57 @@
+.attachment {
+  position: relative;
+  width: 97px;
+  height: 22px;
+  background: #eeeeee;
+  border-radius: 3px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 5px 10px 5px 0;
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 11px;
+    color: #3e3e3e;
+    max-width: 65px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 5px;
+  }
+
+  &__remove {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    display: block;
+    width: 16px;
+    height: 10px;
+    border-radius: 2px;
+    background: url('../../../assets/icons/icon_deleteDarkBlue.svg') no-repeat;
+    transition: all 200ms linear;
+
+    &:hover {
+      background: url('../../../assets/icons/icon_delete_yellow.svg') no-repeat;
+    }
+  }
+
+  &__download {
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    background: #c4c4c4;
+    border-radius: 2px;
+    background: url('../../../assets/icons/icon_download_v3.svg') no-repeat center;
+
+    &:hover {
+      background: url('../../../assets/icons/icon_download_v3_yellow.svg') no-repeat center;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.fgt_password_page {
+  &__wrapper {
+    width: 640px;
+    margin: 100px auto 0;
+    padding: 40px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+    @media (max-width: 576px) {
+      margin: 50px auto 0;
+      padding: 30px;
+    }
+  }
+
+  &__title {
+    font-family: HelveticaMedium, Arial, 'Segoe UI', 'Roboto', 'Oxygen', serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+    @media (max-width: 576px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #868686;
+    margin-top: 20px;
+    padding: 0 70px;
+    @media only screen and (max-width: 700px) {
+      padding: 0 20px;
+    }
+    @media (max-width: 576px) {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 0 30px;
+      margin-top: 10px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-flow: row nowrap;
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 16px;
+    span {
+      color: #000000;
+    }
+  }
+  &__link {
+    font-family: HelveticaMedium, Arial, 'Segoe UI', 'Roboto', 'Oxygen', serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #044c5a;
+    text-decoration: none;
+    margin-left: 5px;
+    &:hover {
+      transition: 0.6ms;
+      color: #ff8c00;
+    }
+    @media (max-width: 576px) {
+      font-family: HelveticaMedium, Arial, 'Segoe UI', 'Roboto', 'Oxygen', serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+    }
+  }
+}

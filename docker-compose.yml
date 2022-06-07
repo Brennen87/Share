@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+
+  kuprik:
+    container_name: kuprik
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'

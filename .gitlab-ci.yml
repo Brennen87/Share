@@ -1,0 +1,120 @@
+image: docker:stable
+
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  DOCKER_IMAGE: 235884567567.dkr.ecr.us-west-1.amazonaws.com/kuprik-fe
+  AWS_DEFAULT_REGION: us-west-1
+  AWS_ECS_CLUSTER_NAME: staging_kuprik
+  AWS_ECS_SERVICE_NAME: fe
+
+services:
+  - docker:dind
+
+stages:
+  - test
+  - build
+  - push
+  - deploy
+
+build_production:
+  stage: build
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - export DOCKER_TAG=$CI_COMMIT_REF_SLUG-$(date +%Y%m%d-%H%M%S)-${CI_COMMIT_SHA:0:8}
+    - echo "export DOCKER_TAG=$(echo $DOCKER_TAG)" > variables
+    - apk add --no-cache curl jq py-pip
+    - pip install awscli
+    - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG || true
+    - docker build
+      --build-arg STRIPE_API_KEY="$STRIPE_API_KEY"
+      --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+      --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+      --tag $DOCKER_IMAGE:$DOCKER_TAG .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    - docker push $DOCKER_IMAGE:$DOCKER_TAG
+  artifacts:
+    paths:
+      - variables
+  only:
+    - master
+
+build_staging:
+  stage: build
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - export DOCKER_TAG=$CI_COMMIT_REF_SLUG-$(date +%Y%m%d-%H%M%S)-${CI_COMMIT_SHA:0:8}
+    - echo "export DOCKER_TAG=$(echo $DOCKER_TAG)" > variables
+    - apk add --no-cache curl jq py-pip
+    - pip install awscli
+    - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG || true
+    - docker build
+      --build-arg ENVIRONMENT="$ENVIRONMENT"
+      --build-arg DEV_BASE_URL="$DEV_BASE_URL"
+      --build-arg DEV_API_URL="$DEV_API_URL"
+      --build-arg DEV_SOCKET_URL="$DEV_SOCKET_URL"
+      --cache-from $CI_REGISTRY_IMAGE:staging-$CI_COMMIT_REF_SLUG
+      --tag $CI_REGISTRY_IMAGE:staging-$CI_COMMIT_REF_SLUG
+      --tag $DOCKER_IMAGE:staging-$DOCKER_TAG .
+    - docker push $CI_REGISTRY_IMAGE:staging-$CI_COMMIT_REF_SLUG
+    - docker push $DOCKER_IMAGE:staging-$DOCKER_TAG
+  artifacts:
+    paths:
+      - variables
+  only:
+    - dev
+
+deploy_production:
+  image: kungl/awscli:latest
+  stage: deploy
+  needs: [build_production]
+  before_script:
+    # get DOCKER_TAG variable value from build stage
+    - source variables
+    - apk add --no-cache gettext
+  script:
+    - envsubst < container-definition.template.json > container-definition.json
+    - TASK_DEFINITION=$(aws ecs register-task-definition
+      --region $AWS_DEFAULT_REGION
+      --family prod_fe
+      --tags "key=commit,value=$CI_COMMIT_SHORT_SHA"
+      --container-definitions "$(cat container-definition.json)" |
+      jq --raw-output .taskDefinition.taskDefinitionArn |
+      cut -d/ -f2)
+  artifacts:
+    paths:
+      - variables
+  only:
+    - master
+
+deploy_staging:
+  image: kungl/awscli:latest
+  stage: deploy
+  needs: [build_staging]
+  before_script:
+    # get DOCKER_TAG variable value from build stage
+    - source variables
+    - apk add --no-cache gettext
+  script:
+    - envsubst < container-definition-staging.template.json > container-definition-staging.json
+    - TASK_DEFINITION=$(aws ecs register-task-definition
+      --region $AWS_DEFAULT_REGION
+      --family staging_fe
+      --tags "key=commit,value=$CI_COMMIT_SHORT_SHA"
+      --container-definitions "$(cat container-definition-staging.json)" |
+      jq --raw-output .taskDefinition.taskDefinitionArn |
+      cut -d/ -f2)
+    - aws ecs update-service
+      --region $AWS_DEFAULT_REGION
+      --cluster $AWS_ECS_CLUSTER_NAME
+      --service $AWS_ECS_SERVICE_NAME
+      --task-definition "$TASK_DEFINITION"
+  artifacts:
+    paths:
+      - variables
+  only:
+    - dev

@@ -1,0 +1,35 @@
+.review_section {
+  margin-top: 50px;
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #333333;
+    @media (max-width: 525px) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @media (max-width: 375px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    span {
+      font-weight: normal;
+    }
+  }
+
+  &__cards {
+    margin-top: 20px;
+
+    & .review_card:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+}

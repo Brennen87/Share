@@ -1,0 +1,19 @@
+.tag {
+  display: inline-block;
+  background: #D2E5ED;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 15px;
+  &:hover {
+    cursor: pointer;
+    background: rgba(196, 196, 196, 0.2);
+  }
+  &:hover &_label {
+    color: #ff8c00;
+  }
+  &_label {
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+  }
+}

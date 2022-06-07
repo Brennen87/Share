@@ -1,0 +1,231 @@
+.vendors {
+  padding: 30px 0;
+
+  &_page {
+    @media only screen and (max-width: 991px) {
+      min-height: 720px;
+    }
+  }
+
+  &__category_name {
+    font-size: 22px;
+    line-height: 130%;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: bold;
+
+    @media (max-width: 575px) {
+      font-size: 14px;
+    }
+  }
+
+  &__genre_name {
+    font-size: 22px;
+    line-height: 28px;
+    color: #a1a1a1;
+    margin-bottom: 15px;
+
+    @media (max-width: 575px) {
+      font-size: 14px;
+      line-height: 130%;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    &_btn {
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      color: #044c5a;
+      margin-bottom: 30px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    @media only screen and (max-width: 991px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__list {
+    flex-grow: 1;
+
+    & .vendor_card {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__filters {
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 20px;
+    width: 262px;
+    margin-left: 30px;
+    z-index: 10000;
+
+
+    &_wrapper {
+      @media (max-width: 991px) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  & .button_main {
+    width: unset;
+
+    &__label {
+      padding: 7px 15px;
+    }
+
+    @media (max-width: 400px) {
+      position: unset;
+      width: 100%;
+    }
+  }
+}
+
+.vendors__filters {
+  padding: 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+  &_mobile {
+    position: relative;
+  }
+
+  &_dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 262px;
+    height: 50px;
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    cursor: pointer;
+
+    @media (max-width: 575px) {
+      width: 140px;
+      height: 30px;
+    }
+
+    span {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      color: #555555;
+
+      @media (max-width: 575px) {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        color: #555555;
+      }
+    }
+
+    .filter_arrow {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &_dropdown_content {
+    display: none;
+    z-index: 999;
+
+    &.show {
+      display: block;
+    }
+
+    .vendors__filters {
+      position: absolute;
+      top: 52px;
+      left: -50px;
+      margin: 0;
+
+      background: #ffffff;
+      border: 1px solid #c4c4c4;
+      box-sizing: border-box;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+    }
+
+    .vendor_filter__title {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .vendors__filters {
+        width: 191px;
+        top: 22px;
+      }
+
+      .vendor_filter__services_title,
+      .vendor_filter__expertises_title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #000000;
+      }
+    }
+
+    .vendor_filter__projects_title,
+    .vendor_filter__location_title {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    .vendor_filter__services_item {
+      font-size: 12px;
+      line-height: 14px;
+      color: #555555;
+    }
+
+    .vendor_filter__rating {
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .vendor_filter__expertises_checkbox {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    .vendor_filter__projects_inputs {
+      input {
+        width: 45px;
+      }
+
+      span {
+        display: flex;
+        font-size: 12px;
+        line-height: 14px;
+        align-content: center;
+        justify-content: center;
+        margin: 0 5px;
+      }
+    }
+  }
+}

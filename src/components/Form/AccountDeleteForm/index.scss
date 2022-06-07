@@ -1,0 +1,156 @@
+.account_delete_form {
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  max-width: 700px;
+  background: #fff;
+  font-size: 18px;
+  line-height: 18px;
+
+  &__header {
+    background: #044c5a;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    color: #000000;
+    margin: 0 0 30px;
+  }
+
+  &__inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .small_button {
+    width: auto;
+  }
+
+  &__input {
+    line-height: 130%;
+    min-height: 40px;
+    max-width: 100%;
+
+    font-size: 14px;
+    padding: 11px;
+    background: #ffffff;
+    border: 0.5px solid #C0C0C0;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.3);
+
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #C0C0C0;
+
+      -webkit-appearance: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  &__checkbox {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 18px;
+
+    & .checkbox__checkmark {
+      background-color: #fff;
+      border: 0.5px solid #c0c0c0;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+
+    & .checkbox__input:checked ~ .checkbox__checkmark {
+      background-color: transparent;
+    }
+
+    & .checkbox__checkmark:after {
+      border-color: #000;
+      left: 5px;
+      top: 1px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+
+    .small_button {
+      min-height: 25px;
+
+      &__label {
+        line-height: 16px;
+      }
+    }
+
+    & button:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    & .small_button:first-child {
+      width: 100px;
+    }
+
+    & .active {
+      transition-duration: 0.3s;
+
+      &:hover {
+        background: #FE6A6A;
+        color: #fff;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  textarea::-webkit-input-placeholder { /* Edge */
+    color: #C4C4C4;
+    opacity: 1;
+  }
+
+  textarea::-moz-placeholder {  /* Firefox 19+ */
+    color: #C4C4C4;  
+    opacity: 1;
+  }
+
+  textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #C4C4C4;
+    opacity: 1;
+  }
+
+  textarea::placeholder {
+    color: #C4C4C4;
+    opacity: 1;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #999999;
+  }
+}

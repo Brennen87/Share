@@ -1,0 +1,332 @@
+.vendor_card {
+  overflow: hidden;
+  padding: 20px 20px 10px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    position: relative;
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+
+  &__top {
+    display: flex;
+  }
+
+  &__bottom {
+    @media (min-width: 575px) {
+      margin-left: 78px;
+    }
+  }
+
+  & &__mobile {
+    .vendor_card {
+      &__user_info {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+
+      &__left {
+        display: flex;
+        align-items: center;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        margin-right: 10px;
+      }
+
+      &__info {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      &__fullname {
+        margin-right: 0;
+      }
+    }
+
+    .small_button {
+      position: relative !important;
+      width: 60px;
+
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+
+    .avatar {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  .truncated_text span {
+    @media (max-width: 575px) {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 130%;
+      color: #000000;
+    }
+  }
+
+  &__fullname {
+    display: inline-block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    color: #000000;
+
+    @media (max-width: 575px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #ff8c00;
+    }
+  }
+
+  &__services,
+  &__expertise {
+    display: flex;
+    flex-wrap: wrap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    &_title {
+      color: #a1a1a1;
+      margin-right: 5px;
+    }
+
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+
+      &_item {
+        color: #044c5a;
+
+        &:hover {
+          cursor: pointer;
+          color: #ff8c00;
+        }
+
+        &:not(:last-child)::after {
+          content: '/';
+          margin: 0 5px;
+          color: #a1a1a1;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &_col {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__description {
+    &_text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 130%;
+      margin-top: 5px;
+      color: #000000;
+      margin-bottom: 20px;
+      padding-right: 15px;
+      white-space: pre-wrap;
+      display: -webkit-box;
+      max-height: 80px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__rate {
+    display: flex;
+
+    &_rating {
+      margin-right: 5px;
+
+      &_number {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #044c5a;
+        margin-right: 15px;
+        padding-top: 2px;
+        cursor: pointer;
+
+        &:hover {
+          color: #ff8c00;
+        }
+      }
+    }
+  }
+
+  &__charge,
+  &__projects,
+  &__location {
+    position: relative;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+  }
+
+  &__charge {
+    padding-left: 23px;
+    margin-right: 15px;
+
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '';
+      width: 15px;
+      height: 20px;
+      padding-left: 25px;
+      background: url('../../../assets/icons/icon_dollar.svg') no-repeat;
+    }
+  }
+
+  &__projects {
+    padding-left: 20px;
+    margin-right: 15px;
+
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '';
+      width: 15px;
+      height: 20px;
+      padding-left: 25px;
+      background: url('../../../assets/icons/icon_complete_project.svg') no-repeat;
+    }
+  }
+
+  &__location {
+    padding-left: 17px;
+
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '';
+      width: 15px;
+      height: 20px;
+      padding-left: 25px;
+      background: url('../../../assets/icons/icon_location.svg') no-repeat;
+    }
+  }
+
+  &__tags {
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    & .tag {
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+
+    & .tag:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &_more {
+      font-size: 14px;
+      line-height: 16px;
+      align-self: center;
+      margin-bottom: 10px;
+      color: #044c5a;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  & .small_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__fullname,
+  &__services,
+  &__expertise {
+    margin-right: 150px;
+    margin-bottom: 8px;
+    @media (max-width: 600px) {
+      margin-right: 0;
+    }
+  }
+
+  .vendor_card__remove {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+    background-color: #c4c4c4;
+    background-image: url('../../../assets/icons/icon_team_delete.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 2px;
+    @media (max-width: 650px) {
+      position: unset;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #ff8c00;
+    }
+  }
+
+  & .avatar {
+    margin-right: 18px;
+  }
+}
+
+.avatar_modal > div {
+  margin-top: 15vh;
+}

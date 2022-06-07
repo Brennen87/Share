@@ -1,0 +1,28 @@
+@media only screen and (max-width: 910px) {
+  .terms_and_police {
+    &_page {
+      max-width: 100%;
+    }
+
+    &_menu {
+      margin-bottom: 10px;
+      &__wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &__item {
+        max-width: 360px;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+    }
+  }
+}

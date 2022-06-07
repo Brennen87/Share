@@ -1,0 +1,45 @@
+.project_create_page {
+  margin: 20px 0 0;
+  @media (max-width: 576px) {
+    margin: 40px 0 0;
+  }
+}
+
+.project_create {
+  position: relative;
+  &__warning {
+    max-width: 1138px;
+    margin: 0 auto 30px;
+
+    @media (max-width: 576px) {
+      position: absolute;
+      top: 0;
+      left: calc(100vw - 55px);
+      margin: 0;
+    }
+
+    .info_tooltip__text {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.project_create__title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  margin: 40px 0 20px;
+  color: #000000;
+
+  @media (max-width: 576px) {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    text-transform: uppercase;
+    color: #000000;
+  }
+}

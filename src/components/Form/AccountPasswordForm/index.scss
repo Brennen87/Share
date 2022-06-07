@@ -1,0 +1,99 @@
+.account_password_form {
+  min-width: 550px;
+  background: #ffffff;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 20px;
+
+  @media only screen and (max-width: 770px) {
+    min-width: unset;
+    width: 100%;
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.account_password_field {
+  display: flex;
+  margin-bottom: 10px;
+  @media only screen and (max-width: 520px) {
+    flex-direction: column;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    min-width: 170px;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 14px;
+    line-height: 130%;
+    color: #000000;
+    padding: 10px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #fbfbfb;
+    max-height: 35px;
+
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+
+    &_error {
+      & input {
+        color: #ff0000 !important;
+        border: 0.5px solid #ff0000;
+        outline-color: #ff0000;
+      }
+
+      &::after {
+        background: url('../../../assets/icons/icon_red_x.svg') no-repeat;
+      }
+    }
+
+    &_success::after {
+      background: url('../../../assets/icons/icon_black_checkmark.svg') no-repeat;
+    }
+
+    &_wrapper {
+      position: relative;
+      flex-grow: 1;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        width: 13px;
+        height: 13px;
+        background-position: center;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.account_password_eye {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  z-index: 10;
+}

@@ -1,0 +1,41 @@
+.pagination {
+  &__wrapper {
+    display: inline-block;
+  }
+
+  display: flex;
+  align-items: center;
+  &__page {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #044C5A;
+    cursor: pointer;
+    &_active {
+      color: #ff8c00;
+    }
+  }
+
+  &__prev, &__next {
+    width: 9px;
+    height: 14px;
+    background: url("../../assets/icons/arrow-blue.svg") no-repeat;
+    background-position: center;
+    cursor: pointer;
+  };
+
+  &__next {
+    transform: rotate(180deg);
+  };
+
+  & > div {
+    margin: 0 4px;
+  }
+  &__dots {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #044C5A;
+    align-self: flex-end;
+  }
+}

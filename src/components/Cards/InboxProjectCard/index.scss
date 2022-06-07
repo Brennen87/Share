@@ -1,0 +1,115 @@
+.inbox_project_card {
+  background: #fff;
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  direction: ltr;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px 8px 0;
+    border-left: 10px solid #fff;
+    &_active {
+      border-left: 10px solid #044c5a;
+    }
+    @media (max-width: 540px) {
+      border-left: 5px solid #fff;
+      &_active {
+        border-left: 5px solid #044c5a;
+      }
+    }
+    @media (max-width: 540px) {
+      padding: 5px 5px 5px 0;
+    }
+  }
+
+  &__icon {
+    &:hover path {
+      fill: #ff8c00;
+    }
+    &:hover rect {
+      stroke: #ff8c00;
+    }
+    @media (max-width: 540px) {
+      margin-right: 7px;
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 15px;
+    white-space: nowrap;
+    max-width: 115px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000000;
+  }
+
+  &__owner {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 5px;
+    white-space: nowrap;
+    max-width: 115px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #868686;
+
+    & span {
+      color: #868686;
+    }
+  }
+
+  &__title,
+  &__owner {
+    @media (max-width: 969px) {
+      max-width: 80px;
+    }
+    @media (max-width: 770px) {
+      max-width: 100px;
+    }
+
+    @media (max-width: 540px) {
+      font-size: 9px;
+      line-height: 10px;
+    }
+    @media (max-width: 410px) {
+      max-width: 70px;
+    }
+  }
+
+  &__closed-indicator {
+    &_cancelled,
+    &_completed {
+      margin-top: 4px;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    &_cancelled {
+      color: #ff5252;
+    }
+
+    &_completed {
+      color: #8bc34a;
+    }
+  }
+}

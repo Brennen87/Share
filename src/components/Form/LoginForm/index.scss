@@ -1,0 +1,36 @@
+.login_form {
+  &__title {
+    font-family: HelveticaMedium, Arial, "Segoe UI", "Roboto", "Oxygen", serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #000000;
+    margin: 0 0 40px;
+    @media (max-width: 576px) {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0 0 15px;
+    }
+  }
+  &__field {
+    margin-bottom: 30px;
+    @media (max-width: 576px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    @media (max-width: 576px) {
+      width: 150px;
+      min-height: 30px;
+      max-height: 30px;
+      & .button_main__label {
+        padding: unset;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+}

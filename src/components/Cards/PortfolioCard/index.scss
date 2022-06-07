@@ -1,0 +1,50 @@
+.portfolio_card {
+  box-sizing: border-box;
+  transition: 0.3s;
+  width: 204px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  @media (max-width: 425px) {
+    flex: 1 1 130px;
+    height: 150px;
+  }
+
+  &__image {
+    overflow: hidden;
+    border-radius: unset;
+    flex-grow: 1;
+    padding: 10px;
+    background: #eeeeee;
+    display: flex;
+    justify-content: center;
+    & img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  &__content {
+    padding: 10px;
+    height: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,117 @@
+.footer {
+  &__wrapper {
+    background: #074e5c;
+    margin-top: 50px;
+    z-index: 998;
+  }
+
+  &__top_menu {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+  &__social_menu {
+    display: flex;
+    align-items: center;
+    @media (max-width: 1200px) {
+      margin-top: 23px;
+    }
+
+    &_label {
+      margin-right: 23px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #fff;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__copyright {
+    position: relative;
+    margin-top: 32px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(161, 161, 161, 0.1);
+    }
+
+    @media (max-width: 1200px) {
+      margin-top: 30px;
+    }
+
+    &_text,
+    &_text i {
+      font-style: normal;
+      text-align: center;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #c2c2c2;
+
+      @media (max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        line-height: 130%;
+
+        & i:last-child {
+          position: relative;
+          margin-top: 10px;
+        }
+      }
+
+      & span {
+        display: inline-block;
+        height: 10px;
+        width: 1px;
+        background: #8f8f8f;
+        margin: 0 5px;
+        border-radius: 5px;
+
+        @media (max-width: 576px) {
+          height: 0;
+          width: 0;
+        }
+      }
+    }
+    &_icon,
+    &_icon_small {
+      margin-left: 5px;
+      width: 16px;
+      height: 19px;
+      background: url('../../assets/icons/icon_kuprik.svg') no-repeat;
+      background-size: cover;
+    }
+
+    &_icon {
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+
+    &_icon_small {
+      display: none;
+      position: absolute;
+      right: 14px;
+      top: -3px;
+      @media (max-width: 576px) {
+        display: inline-block;
+        right: 11px;
+      }
+    }
+  }
+}

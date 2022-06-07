@@ -1,0 +1,45 @@
+.public_portfolio_section {
+  margin-top: 50px;
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #333333;
+    @media (max-width: 525px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__cards {
+    &_wrap {
+      margin-top: 20px;
+    }
+    margin: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    & .portfolio_card {
+      margin: 15px;
+    }
+    @media (max-width: 525px) {
+      justify-content: space-between;
+    }
+  }
+
+  & .show_more_btn {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #074e5c;
+  }
+}
+
+.portfolio_modal {
+  height: 80vh;
+  padding: 0;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}

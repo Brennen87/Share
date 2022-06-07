@@ -1,0 +1,228 @@
+@mixin displayFlex($flow, $align, $content) {
+  width: 100%;
+  display: flex;
+  flex-flow: $flow;
+  align-items: $align;
+  justify-content: $content;
+}
+
+.resource {
+  padding: 30px 0;
+  height: 100%;
+
+  @media (max-width: 800px) {
+    margin: 0 30px;
+  }
+  @media (max-width: 500px) {
+    margin: 0;
+  }
+
+  &__preloader {
+    margin-top: 30px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  &__content {
+    height: 100%;
+
+    @include displayFlex(column nowrap, flex-start, space-between);
+  }
+
+  &_top {
+    @include displayFlex(row nowrap, flex-start, space-between);
+
+    @media (max-width: 800px) {
+      @include displayFlex(column nowrap, flex-start, space-between);
+    }
+  }
+
+  &__left {
+    @include displayFlex(column, flex-start, flex-start);
+    max-width: 555px;
+    flex-basis: 50%;
+    margin-right: 10px;
+
+    @media (max-width: 800px) {
+      padding: 0;
+      text-align: center;
+    }
+
+    & h1 {
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 28px;
+      color: #a1a1a1;
+      margin: 0;
+      padding: 0;
+
+      @media (max-width: 575px) {
+        font-size: 14px;
+        line-height: 130%;
+        text-align: left;
+      }
+
+      &.resource__title_tag {
+        color: #a1a1a1;
+
+        @media (max-width: 700px) {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      margin-right: 5px;
+    }
+  }
+
+  &__right {
+    @include displayFlex(row, flex-start, flex-end);
+    max-width: 555px;
+    flex-basis: 50%;
+    margin-left: 20px;
+
+    @media (max-width: 700px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__search {
+    position: relative;
+    margin-right: 10px;
+    width: 100%;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  &_bottom {
+    padding: 15px 0;
+    height: 100%;
+
+    // @include displayFlex(column wrap, flex-start, flex-start);
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      max-width: 555px;
+
+      margin-right: 30px;
+
+      @media (max-width: 850px) {
+        max-width: none;
+        flex-basis: 100%;
+        width: 100%;
+
+        margin-right: 0;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      max-width: 555px;
+
+      @media (max-width: 850px) {
+        display: none;
+      }
+    }
+  }
+
+  & .select_field {
+    width: 200px;
+    background: #ffffff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    @media (max-width: 580px) {
+      width: 150px;
+    }
+    @media (max-width: 580px) {
+      width: 100%;
+    }
+
+    &__label {
+      margin: 0;
+    }
+  }
+
+  &__categories {
+    @media (max-width: 580px) {
+      width: 150px;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    min-height: 38px;
+    background: #ffffff;
+    border: 0.5px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px 35px 10px 10px;
+    outline: none;
+
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+
+    &:focus {
+      -webkit-appearance: none;
+      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 580px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 500px) {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &__icon {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      cursor: pointer;
+      padding: 10px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

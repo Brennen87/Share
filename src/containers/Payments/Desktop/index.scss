@@ -1,0 +1,201 @@
+.payments {
+  &__total__preloader {
+    height: 65px;
+  }
+
+  &__table {
+    &_top {
+      width: 100%;
+      display: grid;
+      grid-column-gap: 20px;
+      grid-template-columns: 1.3fr repeat(5, 1fr);
+      justify-content: space-between;
+      padding: 10px 15px;
+
+      &_item {
+        width: 100%;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 17px;
+        text-align: center;
+        color: #333333;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:first-child {
+          padding-left: 5px;
+        }
+        &:not(&:nth-child(2)) {
+          justify-content: flex-start;
+        }
+
+        & i.warm {
+          content: '';
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          top: -15px;
+          right: -15px;
+          cursor: pointer;
+          background: url('../../../assets/icons/icon_warning.svg') no-repeat;
+          @media (max-width: 900px) {
+            right: -20px;
+          }
+        }
+
+        & .active {
+          display: block;
+        }
+      }
+    }
+
+    &_bottom {
+      max-width: 100%;
+      background: #ffffff;
+      box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    &_header {
+      width: 100%;
+      padding: 16px;
+      background: #ffffff;
+      display: grid;
+      grid-column-gap: 20px;
+      grid-template-columns: 1.3fr repeat(5, 1fr);
+      justify-content: center;
+      border-bottom: 2px solid rgba(159, 159, 159, 0.5);
+    }
+
+    &_item {
+      width: 100%;
+      color: #000000;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:not(&:nth-child(2)) {
+        justify-content: flex-start;
+      }
+
+      .username {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #000000;
+        cursor: pointer;
+
+        &:hover {
+          color: #ff8c00;
+        }
+      }
+
+      span {
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 16px;
+        color: #666666;
+      }
+    }
+
+    &_desktop {
+      & .info_tooltip_vertical {
+        top: -15px;
+        right: 15px;
+      }
+    }
+
+    &_box {
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 130%;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 120px;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-start;
+      background: #f0f2f3;
+      border-radius: 5px;
+      transition: all 280ms ease;
+
+      &_icon {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        cursor: pointer;
+        background: url('../../../assets/icons/icon_warning_v3_grey.svg') no-repeat center/cover;
+
+        &:hover ~ .payments__table_box {
+          visibility: visible;
+          opacity: 1;
+          z-index: 10;
+        }
+      }
+    }
+  }
+
+  &__user_avatar {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+
+    & .avatar {
+      width: 40px;
+      height: 40px;
+      max-width: 40px;
+      max-height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      margin-right: 10px !important;
+    }
+
+    & .avatar_image {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+
+  .payments__table_header .payments__table_item {
+    &:first-child {
+      padding-left: 53px;
+    }
+  }
+  &__customer {
+    justify-content: center !important;
+    .payments__table {
+      max-width: 645px;
+    }
+    .payments__table_top,
+    .payments__table_card,
+    .payments__table_header {
+      display: grid;
+      align-items: center;
+      justify-content: space-between;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+    }
+
+    .payments__table_top_item,
+    .payments__table_item {
+      &:first-child {
+        justify-content: flex-start;
+      }
+    }
+  }
+}

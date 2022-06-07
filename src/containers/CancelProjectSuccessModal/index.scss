@@ -1,0 +1,49 @@
+.cancel_project__success_modal {
+  max-width: 498px;
+  background: #ffffff;
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+  &__inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    @media (max-width: 425px) {
+      padding: 20px 10px;
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+    @media (max-width: 425px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+  &__describe {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    margin: 20px 0;
+    text-align: center;
+    color: #000000;
+  }
+
+  .button_main {
+    width: 170px;
+    min-height: 30px;
+    &__label {
+      font-size: 16px;
+      font-weight: 18px;
+    }
+  }
+}

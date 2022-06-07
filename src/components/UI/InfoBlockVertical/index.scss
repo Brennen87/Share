@@ -1,0 +1,68 @@
+.info_block__vertical {
+  background: #f0f2f3;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+
+  .info_block {
+    &__title {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #313131;
+      margin-bottom: 15px;
+
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background: url('../../../assets/icons/icon_warning_v3_grey.svg') no-repeat center/cover;
+      }
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 130%;
+      padding-left: 0;
+      color: #333333;
+    }
+  }
+}
+
+.info_block__mobile {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  
+  pointer-events: none;
+
+  p {
+    font-size: 11px;
+    line-height: 13px;
+    color: #333333;
+    padding: 10px;
+    margin: 0;
+    background: #f0f2f3;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    z-index: 100;
+    pointer-events: visible;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    pointer-events: visible;
+  }
+}

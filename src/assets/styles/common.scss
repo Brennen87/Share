@@ -1,0 +1,11 @@
+.show_more_btn {
+  text-align: center;
+  font-size: 18px;
+  line-height: 21px;
+  color: #044C5A;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    color: #ff8c00;
+  }
+}

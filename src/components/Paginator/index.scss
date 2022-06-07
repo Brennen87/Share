@@ -1,0 +1,63 @@
+@mixin dots {
+  content: '...';
+  font-size: 14px;
+  line-height: 16px;
+  cursor: auto;
+}
+
+@mixin textStyle {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #044C5A;
+  cursor: pointer;
+  &.active{
+    color: #FF8C00;
+  }
+}
+
+.paginator{
+  display: flex;
+  justify-content: center;
+  &-left-arrow, &-right-arrow{
+    width: 6px;
+    height: 12px;
+    cursor: pointer;
+    align-self: center;
+  }
+  &-left-arrow{
+    background: url('../../assets/icons/arrow-blue.svg') no-repeat center/cover;
+  }
+  &-right-arrow{
+    background: url('../../assets/icons/arrow-blue.svg') no-repeat center/cover;
+    transform: scale(-1,-1);
+  }
+  &-numbers{
+    display: flex;
+    padding: 0 10px;
+    &-first, &-last{
+      @include textStyle
+    }
+  }
+  .current-center-numbers{
+    padding: 0 5px;
+    display: flex;
+    &::before, &::after{
+      @include dots;
+      align-self: flex-end;
+    }
+    &::before{
+      margin-right: 5px;
+    }
+    &::after{
+      margin-left: 5px;
+    }
+    span{
+      @include textStyle;
+      &:first-child{
+        margin-right: 10px;
+      }
+    }
+  }
+}

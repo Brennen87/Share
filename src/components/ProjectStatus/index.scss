@@ -1,0 +1,36 @@
+.project_status {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 425px) {
+    font-size: 10px !important;
+    line-height: 11px !important;
+    padding: 0 10px !important;
+  }
+
+  &__in_progress {
+    color: #ffb74d;
+  }
+
+  &__pending_cancellation {
+    color: #ffb74d;
+
+    &.real {
+      color: #ff5252;
+    }
+  }
+
+  &__completed {
+    color: #8bc34a;
+  }
+
+  &__cancelled {
+    color: #ff5252;
+  }
+}

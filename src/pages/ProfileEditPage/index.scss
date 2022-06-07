@@ -1,0 +1,79 @@
+.profile_edit_page {
+  &__wrap {
+    margin-top: 40px;
+  }
+
+  width: 810px;
+  margin: 30px auto;
+  @media only screen and (max-width: 850px) {
+    width: 100%;
+    & .pep_basic_form__form {
+      flex-direction: column;
+    }
+
+    & .avatar_editor__wrapper {
+      margin-right: 0;
+      margin-bottom: 20px;
+      align-self: center;
+      overflow: hidden;
+    }
+  }
+
+  &__basic_section {
+    @media only screen and (max-width: 500px) {
+      & .pep_basic_form__fullname {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
+    }
+  }
+
+  &__basic_section,
+  &__summary_section,
+  &__portfolio_section {
+    background: #ffffff;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    @media (max-width: 525px) {
+      padding: 10px;
+    }
+  }
+
+  &__button {
+    max-width: 200px;
+    min-height: 30px;
+    margin-left: auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+
+    &.button_main-disabled {
+      background: #c4c4c4;
+    }
+
+    & .button_main__label {
+      @media (max-width: 500px) {
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 16px;
+      color: #fff;
+      padding: 0;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  & .small_button {
+    &__label {
+      @media (max-width: 500px) {
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+}

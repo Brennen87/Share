@@ -1,0 +1,43 @@
+$leftSide: 200px;
+
+.billing_info_form {
+  background: #FFFFFF;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+
+  &__title {
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #333333;
+    margin-bottom: 27px;
+  }
+
+  &__input {
+    &:not(:last-child) {margin-bottom: 10px;}
+    & .input_text_field_small__label {
+      min-width: $leftSide;
+    }
+  }
+
+  &__update {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    font-size: 18px;
+    line-height: 21px;
+    color: #044C5A;
+  }
+
+  & .select_field {
+    margin-bottom: 10px;
+    &__label {width: $leftSide;}
+  }
+}

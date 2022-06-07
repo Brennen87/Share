@@ -1,0 +1,56 @@
+.portfolio_modal_content {
+  position: relative;
+  width: 980px;
+  margin: 0 50px;
+  background-color: #fff;
+  border-radius: 5px;
+
+  @media only screen and (max-width: 1200px) {
+    width: calc(100vw - 105px);
+  }
+
+  &__prev_button,
+  &__next_button {
+    background-color: #c4c4c4;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  &__prev_button {
+    left: -45px;
+
+    & > svg {
+      margin-left: -2px;
+    }
+  }
+
+  &__next_button {
+    right: -45px;
+
+    & > svg {
+      margin-right: -2px;
+    }
+  }
+
+  &__prev_button:hover,
+  &__next_button:hover {
+    background-color: #ff8c00;
+  }
+}

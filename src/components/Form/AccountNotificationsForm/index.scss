@@ -1,0 +1,124 @@
+.account_notifications_form {
+  min-width: 550px;
+  max-width: 550px;
+  background: #ffffff;
+  box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 20px;
+  @media only screen and (max-width: 770px) {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #666666;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 130%;
+    color: #a1a1a1;
+    margin-bottom: 20px;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: flex-start;
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &_left {
+      margin-right: 30px;
+      min-width: 30%;
+      white-space: nowrap;
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    &_right {
+      min-width: 43%;
+    }
+
+    &_right {
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+        padding-left: unset;
+      }
+
+      align-content: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  &__buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+    & button:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.big_checkbox {
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+
+    & .big_checkbox__input:checked ~ .big_checkbox__checkmark {
+      background: url('../../../assets/icons/icon_black_checkmark.svg') no-repeat 50%;
+      &:hover {
+        background: url('../../../assets/icons/icon_black_checkmark_yellow.svg') no-repeat 50%;
+      }
+    }
+
+    & .big_checkbox__input:checked ~ .big_checkbox__checkmark_disable {
+      background: url('../../../assets/icons/icon_black_checkmark_grey.svg') no-repeat 50% !important;
+    }
+  }
+
+  &__checkmark,
+  &__checkmark_disable {
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 3px;
+    height: 21px;
+    width: 22px;
+    border: 0.5px solid #c0c0c0;
+    background-color: #fff;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+.account_checkbox {
+  margin-bottom: 10px;
+}

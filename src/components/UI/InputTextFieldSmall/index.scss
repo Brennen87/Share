@@ -1,0 +1,85 @@
+.input_text_field_small {
+  display: flex;
+  flex-direction: column;
+  &__row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__top {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    .input_text_field_small__label {
+      text-transform: none;
+    }
+  }
+
+  &__label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #868686;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+  &__text {
+    max-width: 172px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    color: #c4c4c4;
+    max-width: 160px;
+  }
+
+  &__input {
+    flex-grow: 1;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    padding: 10px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #fbfbfb;
+    max-height: 35px;
+
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.03), inset 0 0 2px rgba(0, 0, 0, 0.25);
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    &:focus {
+      background: #ffffff;
+      border: 1px solid #c4c4c4;
+      box-sizing: border-box;
+      border-radius: 3px;
+
+      -webkit-appearance: none;
+      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    &_error {
+      border: 1px solid #ff0000;
+    }
+    &::placeholder {
+      color: #000000;
+    }
+    &_read_only {
+      color: #b0b0b0 !important;
+    }
+  }
+}

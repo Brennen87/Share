@@ -1,0 +1,24 @@
+.accept_cc_list {
+  display: flex;
+}
+
+.accept_cc_card {
+  width: 45px;
+  height: 28px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-size: cover;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__visa {
+    background: url("../../../assets/icons/cards/icon_visa.svg") no-repeat;
+  } &__master {
+    background: url("../../../assets/icons/cards/icon_master.svg") no-repeat;
+  } &__amex {
+    background: url("../../../assets/icons/cards/icon_amex.svg") no-repeat;
+  } &__discover {
+    background: url("../../../assets/icons/cards/icon_discover.svg") no-repeat;
+  }
+}

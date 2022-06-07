@@ -1,0 +1,52 @@
+.calendar {
+  .react-calendar {
+    min-height: 310px;
+  }
+
+  .react-date-picker__calendar {
+    z-index: 999;
+
+    &--open {
+      @media only screen and (max-width: 410px) {
+        width: 300px !important;
+        height: auto !important;
+        position: fixed !important;
+        top: 100px !important;
+        left: 15px !important;
+        z-index: 999 !important;
+      }
+    }
+  }
+
+  .react-date-picker__wrapper {
+    background: #ffffff;
+    border: 0.5px solid #c0c0c0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px 10px;
+    min-width: 200px;
+
+    @media only screen and (max-width: 410px) {
+      width: 150px;
+    }
+  }
+
+  .react-date-picker__inputGroup {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+  }
+
+  .react-date-picker__clear5-button,
+  .react-date-picker__clear-button {
+    display: none;
+  }
+
+  .react-date-picker__calendar-button svg {
+    stroke: #044c5a !important;
+  }
+
+  .react-date-picker__calendar-button:hover svg {
+    stroke: #ff8c00 !important;
+  }
+}

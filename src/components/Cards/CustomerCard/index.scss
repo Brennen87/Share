@@ -1,0 +1,156 @@
+.customer_card {
+  &__wrap {
+    background: #FFFFFF;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    @media (max-width: 576px) {
+      padding: 10px;
+      min-height: 107px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  &__avatar {
+    margin-right: 20px;
+  }
+
+  &__info, &__rate, &__left, &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__left {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+
+  &__right {
+    align-self: stretch;
+    align-items: unset;
+    position: relative;
+
+    @media (max-width: 576px) {
+      justify-content: center;
+    }
+  }
+
+  &__rate {
+    margin-right: 20px;
+    & div {
+      display: flex;
+      align-items: center;
+    }
+    &_number {
+      font-size: 14px;
+      line-height: 16px;
+      color: #044C5A;
+      margin-left: 5px;
+      margin-bottom: 3px;
+      cursor: pointer;
+      &:hover {
+        color: #ff8c00;
+      }
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+  }
+
+  &__fullname {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    cursor: pointer;
+    @media (max-width: 576px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &:hover {
+      color: #ff8c00;
+    }
+  }
+
+  &__location {
+    position: relative;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    padding-left: 17px;
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      content: '';
+      width: 15px;
+      height: 20px;
+      padding-left: 25px;
+      background: url("../../../assets/icons/icon_location.svg") no-repeat;
+    }
+    @media (max-width: 576px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__contact_btn {
+    width: 80px;
+    margin-top: 5px;
+    align-self: flex-start;
+
+    @media (max-width: 576px) {
+      min-width: 60px;
+      min-height: 30px;
+      margin-top: 0;
+      padding: 7px 14px;
+
+      & .small_button__label {
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  &__remove_btn {
+    padding-left: 20px;
+    border-left: 1px solid #C4C4C4;
+    margin-left: 20px;
+    display: flex;
+    & svg {
+      margin: auto;
+      cursor: pointer;
+      &:hover path {
+        fill: #FF8C00;
+      }
+    }
+
+    @media (max-width: 576px) {
+      position: absolute;
+      border: unset;
+      bottom: 0;
+      right: 0;
+      & svg {
+        transform: scale(0.8);
+        bottom: -15px;
+      }
+    }
+  }
+}

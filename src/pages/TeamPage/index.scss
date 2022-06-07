@@ -1,0 +1,100 @@
+.team_page {
+  margin-top: 40px;
+
+  @media (max-width: 1220px) {
+    & .container {
+      max-width: 556px;
+    }
+  }
+  
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 20px 0;
+    @media (max-width: 576px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    span {
+      font-weight: normal;
+    }
+  }
+
+  &__people {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+    @media (max-width: 1220px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  & .button_main {
+    width: unset;
+    &__label {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      color: #ffffff;
+      padding: 8px 27px;
+    }
+  }
+
+  &__preloader {
+    height: 50vh;
+  }
+
+  &__pagination {
+    display: flex;
+    margin-top: 15px;
+    justify-content: flex-end;
+  }
+
+  &__warning {
+    margin-bottom: 28px;
+    display: flex;
+
+    @media (max-width: 576px) {
+      justify-content: flex-end;
+      margin-bottom: -20px;
+    }
+
+    .info_tooltip__icon {
+      @media (max-width: 576px) {
+        position: relative;
+        bottom: 37px;
+        right: 3px;
+      }
+    }
+
+    .info_tooltip__text {
+      top: -10px;
+    }
+  }
+
+  .info_block::before {
+    top: 10px;
+    left: 12px;
+
+    @media (max-width: 1220px) {
+      top: 12px;
+      left: 12px;
+    }
+  }
+
+  .info_block__text {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  & .fixed_vendor_card__fullname {
+    width: 60%;
+  }
+}

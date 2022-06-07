@@ -1,0 +1,26 @@
+.link_and_width {
+  &__label {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    color: #044C5A;
+    cursor: pointer;
+    &_last::after {
+      content: unset!important;
+    }
+    &:hover {
+      color: #ff8c00;
+    }
+    &::after {
+      content: '/';
+      color: #777777!important;
+      margin: 0 4px;
+    }
+  }
+}
+
+.link_hidden {
+  position: absolute;
+  z-index: -10;
+  opacity: 0;
+}

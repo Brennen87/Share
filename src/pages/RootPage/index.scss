@@ -1,0 +1,26 @@
+.root_page {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  &__fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+  & main {
+    flex-grow: 1;
+    margin-top: 60px;
+    @media (max-width: 576px) {
+      margin-top: 40px;
+    }
+  }
+
+  & .main_authorised {
+    margin-top: 100px;
+    @media (max-width: 576px) {
+      margin-top: 65px;
+    }
+  }
+}

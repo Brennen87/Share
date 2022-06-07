@@ -1,0 +1,66 @@
+.pswd_recovery_page {
+  &__wrapper,
+  &__success_wrapper {
+    width: 640px;
+    margin: 100px auto 0;
+    padding: 40px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0.1px 0.5px 3px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+    @media (max-width: 576px) {
+      margin: 50px auto 0;
+      padding: 30px;
+    }
+  }
+
+  &__success_wrapper {
+    width: 500px;
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: HelveticaMedium, Arial, 'Segoe UI', 'Roboto', 'Oxygen', serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+    @media (max-width: 576px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    padding: 0 10px;
+    color: #000000;
+    @media (max-width: 576px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__btn_success {
+    margin: 20px auto 0;
+    @media (max-width: 576px) {
+      width: 150px;
+      min-height: 30px;
+      max-height: 30px;
+      & .button_main__label {
+        padding: unset;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+}

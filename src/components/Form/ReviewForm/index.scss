@@ -1,0 +1,70 @@
+.review_form {
+  margin-top: 10px;
+  padding-top: 30px;
+  border-top: 0.5px solid rgba(159, 159, 159, 0.5);
+
+  &__label,
+  & .textarea_field__label {
+    display: block;
+    width: 160px;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #000000;
+    padding: 0;
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__review {
+    margin-bottom: 15px;
+    .textarea_field__label {
+      font-style: italic;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 130%;
+      text-transform: capitalize;
+      color: #000000;
+      padding: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    .small_button__label {
+      text-transform: initial;
+    }
+    button {
+      border-radius: 5px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__submit_customer {
+    width: unset;
+
+    &:disabled {
+      background: #c4c4c4 !important;
+    }
+  }
+
+  &__submit_vendor {
+    &:disabled {
+      background: #c4c4c4 !important;
+    }
+  }
+
+  &__customer,
+  &__vendor {
+    margin-top: 0;
+    border-top: unset;
+  }
+}

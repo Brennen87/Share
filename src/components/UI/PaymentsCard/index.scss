@@ -1,0 +1,112 @@
+.paymentsinfo_card {
+  width: 165px;
+  padding: 10px;
+  background: #f0f2f3;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+
+  @media (max-width: 380px) {
+    width: 135px;
+    &__level,
+    &__fee,
+    span {
+      font-size: 8px !important;
+      line-height: 9px !important;
+    }
+  }
+
+  &__level {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #868686;
+    margin: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+
+  &__fee {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    padding: 0;
+    margin: 5px 0;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 11px;
+    color: #666666;
+    white-space: nowrap;
+  }
+
+  &__ownLevel {
+    position: relative;
+    background: #ffffff;
+
+    .paymentsinfo_card__level {
+      flex-flow: nowrap;
+      white-space: nowrap;
+
+      .indicator_container {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 5px;
+        background: url('../../../assets/icons/icon_premium_empty.svg') no-repeat center;
+
+        .level_number {
+          position: absolute;
+          font-size: 13px;
+          color: #044c5a;
+          top: 7px;
+          left: 11px;
+        }
+
+        @media (max-width: 380px) {
+          width: 15px;
+          height: 15px;
+          background: url('../../../assets/icons/icon_premium__small_empty.svg') no-repeat center;
+
+          .level_number {
+            font-size: 8px;
+            top: 2px;
+            left: 5px;
+          }
+        }
+      }
+
+      .indicator_container--founder {
+        background: url('../../../assets/icons/icon_founder-premium.svg') no-repeat center;
+        width: 35px;
+        height: 39px;
+        right: 10px;
+
+        @media (max-width: 380px) {
+          background: url('../../../assets/icons/icon_founder-premium.svg') no-repeat center;
+        }
+      }
+    }
+
+    .paymentsinfo_card__timeframe--founder {
+      position: relative;
+      top: -5px;
+    }
+  }
+
+  .business_icon {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    background: url('../../../assets/icons/icon_business.svg') no-repeat center;
+  }
+}

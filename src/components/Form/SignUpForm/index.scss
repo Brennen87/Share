@@ -1,0 +1,247 @@
+.sign_up_form {
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    color: #868686;
+    margin: 10px 0;
+    display: block;
+
+    @media (max-width: 576px) {
+      font-size: 10px;
+      line-height: 11px;
+    }
+  }
+
+  &__title {
+    font-family: HelveticaMedium, Arial, 'Segoe UI', 'Roboto', 'Oxygen', serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    color: #000000;
+    margin: 0 0 45px 0;
+
+    @media (max-width: 576px) {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0 0 18px 0;
+    }
+  }
+
+  &__fullname {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 50%;
+  }
+
+  &__name {
+    flex-grow: 1;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__terms {
+    margin-bottom: 30px;
+    @media (max-width: 576px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    @media (max-width: 576px) {
+      width: 150px;
+      min-height: 30px;
+      max-height: 30px;
+      & .button_main__label {
+        padding: unset;
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  &__roles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    &__star {
+      margin-right: 3px;
+    }
+
+    &__title {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 16px;
+
+      @media (max-width: 576px) {
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 12px;
+      }
+
+      &_grey {
+        margin-left: 5px;
+        color: #868686;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+
+        @media (max-width: 576px) {
+          font-size: 10px;
+          line-height: 11px;
+        }
+      }
+
+      &_error {
+        color: #ff0000;
+      }
+    }
+
+    &_item {
+      margin-bottom: 35px;
+      flex: 1;
+      @media (max-width: 750px) {
+        max-width: 240px;
+      }
+
+      @media (max-width: 576px) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &_description {
+      margin-top: 10px;
+      padding-left: 30px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #868686;
+
+      @media (max-width: 750px) {
+        padding-right: 60px;
+      }
+
+      @media (max-width: 576px) {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 10px;
+        line-height: 11px;
+      }
+    }
+
+    & .checkbox__container {
+      text-transform: uppercase;
+      @media (max-width: 576px) {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    & .checkbox__checkmark {
+      box-sizing: border-box;
+      border-radius: 3px;
+      background: transparent;
+      border: 1px solid #c4c4c4;
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+    & .checkbox__checkmark {
+      border: 1px solid #c0c0c0;
+      box-sizing: border-box;
+      border-radius: 3px;
+      background: transparent;
+    }
+
+    & .checkbox__input:checked ~ .checkbox__checkmark {
+      background-color: transparent !important;
+    }
+
+    & .checkbox__checkmark:after {
+      left: 5px !important;
+      top: 1px !important;
+      border-color: #044c5a !important;
+      border-width: 0 3px 3px 0 !important;
+    }
+
+    & .checkbox__error .checkbox__checkmark {
+      border-color: #ff0000 !important;
+    }
+
+    & .checkbox__error {
+      color: #ff0000 !important;
+    }
+  }
+
+  &__row {
+
+    &_mt {
+      margin-top: 20px;
+
+      @media (max-width: 576px) {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__password_rules {
+    font-size: 14px;
+    color: #868686;
+    line-height: 130%;
+    margin-top: 10px;
+
+    @media (max-width: 576px) {
+      font-size: 10px;
+      line-height: 130%;
+    }
+  }
+
+  &__confirm {
+  }
+
+  &__terms {
+    margin-top: 20px;
+
+    @media (max-width: 576px) {
+      font-size: 10px;
+      line-height: 11px;
+      margin-top: 15px;
+    }
+
+    & a {
+      color: #044c5a;
+
+      &:hover {
+        color: #ff8c00;
+      }
+    }
+
+    & .checkbox__error .checkbox__checkmark {
+      background: #ff0000 !important;
+    }
+    
+    &_error {
+      color: #ff0000 !important;
+    }
+
+    @media (max-width: 576px) {
+      & .checkbox__checkmark {
+        height: 15px;
+        width: 15px;
+      }
+
+      & .checkbox__container .checkbox__checkmark:after {
+        border-width: 0 2px 2px 0;
+        left: 4px;
+        top: 2px;
+        width: 4px;
+        height: 7px;
+      }
+    }
+  }
+}

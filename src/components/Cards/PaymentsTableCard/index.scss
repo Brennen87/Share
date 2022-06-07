@@ -1,0 +1,11 @@
+.payments__table_card {
+  display: grid;
+  padding: 8px 20px;
+  grid-column-gap: 20px;
+  grid-template-columns: 1.3fr repeat(5, 1fr);
+  background: rgba(196, 196, 196, 0.2);
+
+  &:nth-child(2n) {
+    background: #fff;
+  }
+}
